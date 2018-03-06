@@ -25,7 +25,19 @@ class Item: PFObject, PFSubclassing {
             }
         }
     }
-    
+    var currentPrice:[Int] {
+        get {
+            if let array = self["currentPrice"] as? [Int] {
+                return array
+            }else{
+                return [Int]()
+            }
+        }
+        set {
+            self["currentPrice"] = newValue
+        }
+    }
+
     var currentWinners:[String] {
         get {
             if let array = self["currentWinners"] as? [String] {
@@ -267,7 +279,11 @@ class Item: PFObject, PFSubclassing {
 
     var minimumBid: Int {
         get {
-            return price
+            if !currentPrice.isEmpty {
+                return currentPrice.min()!
+            } else {
+                return price
+            }
         }
     }
     

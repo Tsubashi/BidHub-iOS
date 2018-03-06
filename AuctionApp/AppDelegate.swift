@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let configuration = ParseClientConfiguration {
-            $0.applicationId = "NSTu2o0vGr9UJ0JYM5iPXSYGoDoQQ3ulrERXUEG0"
-            $0.clientKey = "D3H1F21LuG2lOzf8xf9jRmlOE8aPjrA7pJXffx0L"
-            $0.server = "https://parse.fitz.guru/parse"
+            $0.applicationId = "UCRPCAuction"
+            $0.clientKey = "bba0f20f-7d2a-48c5-bd91-a0061da55985"
+            $0.server = "https://ucrpc.aquaveo.com/parse"
             //$0.localDatastoreEnabled = true // If you need to enable local data store
         }
         Parse.initialize(with: configuration)
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                      kOSSettingsKeyInAppLaunchURL: true]
         
         OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "f047cf97-a1e9-4f4e-8629-2b4958977a4b",
+                                        appId: "45633b58-7400-483a-a42d-3214117ae038",
                                         handleNotificationReceived: notificationReceivedBlock, 
                                         handleNotificationAction: notificationOpenedBlock, 
                                         settings: onesignalInitSettings)

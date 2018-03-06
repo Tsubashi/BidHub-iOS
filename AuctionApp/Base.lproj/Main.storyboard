@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vrS-ky-ioH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vrS-ky-ioH">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Light</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="un1-64-FSE">
@@ -23,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mfa-summer-party-splash-2017" translatesAutoresizingMaskIntoConstraints="NO" id="rzw-Pv-l6j">
+                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="rzw-Pv-l6j">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -53,7 +61,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Telephone" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fa9-za-p0L" userLabel="Telephone Text Field" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
                                         <rect key="frame" x="16" y="126" width="288" height="33"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="go"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <action selector="loginPressed:" destination="L1S-fT-33x" eventType="editingDidEnd" id="LAo-dX-uuf"/>
                                             <outlet property="delegate" destination="L1S-fT-33x" id="QcO-43-cON"/>
@@ -91,10 +99,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAF-Cq-zq8" userLabel="message frame">
                                 <rect key="frame" x="0.0" y="312" width="320" height="168"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-Ux-qk2" userLabel="welcomeMessage">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" fixedFrame="YES" text="Welcome to the 2018 UCRPC Silent Auction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-Ux-qk2" userLabel="welcomeMessage">
                                         <rect key="frame" x="6" y="2" width="308" height="164"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Welcome to amazing art for an exceptional cause. These items were selected by MFA curators and patrons to support the contemporary artists and raise funds for the innovative programs at the MFA, Boston. See the works in person at the Summer Party, starting 9pm June 10, 2017. Bid high and often before the Auction ends at 11pm!</string>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -102,7 +109,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mfa-logo-2017" translatesAutoresizingMaskIntoConstraints="NO" id="8Xg-1j-CC8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UCRPC_Logo_wide" translatesAutoresizingMaskIntoConstraints="NO" id="8Xg-1j-CC8">
                                 <rect key="frame" x="0.0" y="29" width="320" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8Xg-1j-CC8" secondAttribute="height" multiplier="160:29" id="ZeV-qN-Wbk"/>
@@ -143,7 +150,7 @@
             <objects>
                 <navigationController id="vrS-ky-ioH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ueS-5j-mNt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.15686274509803921" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.94901960780000005" green="0.42745098040000001" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,7 +195,7 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemTableViewCell" rowHeight="635" id="O6g-Ig-KSM" customClass="ItemTableViewCell" customModule="Auction" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="635"/>
+                                        <rect key="frame" x="0.0" y="78" width="320" height="635"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O6g-Ig-KSM" id="ja8-Zf-ZQG">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="635"/>
@@ -545,7 +552,6 @@
                                 <segment title="All"/>
                                 <segment title="No Bids"/>
                                 <segment title="My Bids"/>
-                                <segment title="Show..."/>
                             </segments>
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -591,7 +597,7 @@
                                             <constraint firstAttribute="height" constant="70" id="Ngt-8E-gjJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="go" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UB-dm-3jK">
                                         <rect key="frame" x="20" y="0.0" width="240" height="78"/>
@@ -762,6 +768,12 @@
         <!--Category View Controller-->
         <scene sceneID="RQE-qg-Gmb">
             <objects>
+                <tapGestureRecognizer id="PKl-cW-eyR">
+                    <connections>
+                        <action selector="didTapBackground:" destination="Krt-BP-4rZ" id="1JX-NU-cLP"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUz-Vy-7FM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CategoryViewController" id="Krt-BP-4rZ" customClass="CategoryViewController" customModule="Auction" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a6m-Gn-Pl2"/>
@@ -827,20 +839,14 @@
                         <outlet property="toolbar" destination="iP3-Qb-aAt" id="zrL-4g-GTc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUz-Vy-7FM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="PKl-cW-eyR">
-                    <connections>
-                        <action selector="didTapBackground:" destination="Krt-BP-4rZ" id="1JX-NU-cLP"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2252" y="-175.86206896551727"/>
         </scene>
     </scenes>
     <resources>
+        <image name="BG" width="1050" height="702"/>
         <image name="HSLogOutIcon" width="18" height="22"/>
+        <image name="UCRPC_Logo_wide" width="1861" height="479"/>
         <image name="bidNowButtonSmall" width="80" height="30"/>
-        <image name="mfa-logo-2017" width="640" height="99"/>
-        <image name="mfa-summer-party-splash-2017" width="640" height="1136"/>
     </resources>
 </document>

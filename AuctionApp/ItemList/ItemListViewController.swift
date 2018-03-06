@@ -332,7 +332,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         
         DataManager().sharedInstance.bidOn(item, maxBid: maxBid) { (success, errorString) -> () in
             if success {
-                print("Woohoo", terminator: "")
+                print("Woohoo, the bid went through", terminator: "")
                 self.items = DataManager().sharedInstance.allItems
                 self.reloadData()
                 SVProgressHUD.dismiss()

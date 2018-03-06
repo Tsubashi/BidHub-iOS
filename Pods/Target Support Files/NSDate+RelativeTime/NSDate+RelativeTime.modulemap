@@ -1,6 +1,0 @@
-framework module NSDate_RelativeTime {
-  umbrella header "NSDate+RelativeTime-umbrella.h"
-
-  export *
-  module * { export * }
-}
