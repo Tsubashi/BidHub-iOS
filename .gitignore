@@ -1,12 +1,8 @@
 
+Pods*
+*.DS_Store
+
 *.xcscheme
 
 *.xcuserstate
-
-AuctionApp.xcodeproj/xcuserdata/Yaron.xcuserdatad/xcschemes/xcschememanagement.plist
-
-Pods/Pods.xcodeproj/xcuserdata/Yaron.xcuserdatad/xcschemes/xcschememanagement.plist
-
-Pods/Pods.xcodeproj/xcuserdata/Amy_Ly.xcuserdatad/xcschemes/xcschememanagement.plist
-
-AuctionApp.xcodeproj/xcuserdata/Amy_Ly.xcuserdatad/
+*xcuserdata/
