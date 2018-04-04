@@ -9,7 +9,7 @@
 Pods/
 
 # XCode Files
-UCRPCAuction.xcworkspace/
+AuctionApp.xcworkspace/xcuserdata
 *.xcscheme
 *.xcuserstate
 *xcuserdata/
