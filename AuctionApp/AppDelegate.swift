@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = ParseClientConfiguration {
             $0.applicationId = "UCRPCAuction"
             $0.clientKey = "bba0f20f-7d2a-48c5-bd91-a0061da55985"
-            $0.server = "https://ucrpc.aquaveo.com/parse"
+            $0.server = "https://auction.ucrpc.org/parse"
             //$0.localDatastoreEnabled = true // If you need to enable local data store
         }
         Parse.initialize(with: configuration)
