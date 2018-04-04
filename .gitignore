@@ -1,8 +1,15 @@
+# IDE Files
+*.swp
+*.swo
 
-Pods*
+# Mac Files
 *.DS_Store
 
-*.xcscheme
+# CocoaPod Files
+Pods/
 
+# XCode Files
+UCRPCAuction.xcworkspace/
+*.xcscheme
 *.xcuserstate
 *xcuserdata/
