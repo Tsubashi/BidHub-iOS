@@ -6,7 +6,6 @@
 
 import UIKit
 import UserNotifications
-import OneSignal
 import Parse
 
 @UIApplicationMain
@@ -87,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         PFPush.handle(userInfo)
+        //TODO: Reload Item View Controller Data
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.

@@ -37,11 +37,9 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         SVProgressHUD.setBackgroundColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0))
         SVProgressHUD.setForegroundColor(UIColor(red: 242/255, green: 109/255, blue: 59/255, alpha: 1.0))
         SVProgressHUD.setRingThickness(5.0)
-        
         
         let colorView:UIView = UIView(frame: CGRect(x: 0, y: -1000, width: view.frame.size.width, height: 1000))
         colorView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0)
@@ -337,13 +335,13 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     // Braintree functions
     func fetchClientToken() {
         // TODO: Switch this URL to your own authenticated API
-        let clientTokenURL = NSURL(string: "https://auction.ucrpc.org/payment/client_token")!
+        let clientTokenURL = NSURL(string: "https://auction.ucrpc.org/payment/client-token")!
         let clientTokenRequest = NSMutableURLRequest(url: clientTokenURL as URL)
         clientTokenRequest.setValue("text/plain", forHTTPHeaderField: "Accept")
 
         URLSession.shared.dataTask(with: clientTokenRequest as URLRequest) { (data, response, error) -> Void in
             let httpResponse = response as? HTTPURLResponse
-            if error == nil && httpResponse?.statusCode == 200 {
+            if error == nil && httpResponse!.statusCode == 200 {
                 if let usableData = data {
                     let clientToken = String(data: usableData, encoding: String.Encoding.utf8)
                     self.showPaymentDropIn(clientTokenOrTokenizationKey: clientToken!)
@@ -370,6 +368,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
                 // print(result.paymentMethod)
                 // result.paymentIcon
                 // result.paymentDescription
+                self.showError("Result: \(result)")
                 self.postNonceToServer(paymentMethodNonce: result.paymentMethod!.nonce)
             }
             controller.dismiss(animated: true, completion: nil)
@@ -426,9 +425,11 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
             self.present(alertView, animated: true, completion: nil)
         }
         else {
-            // make and use a UIAlertView
-            let alertView = UIAlertView(title: "Error", message: errorString, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok")
-            alertView.show()
+            // make and use a UIAlertController
+            let alert = UIAlertController(title: "Uh-Oh!", message:errorString, preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { _ in }
+            alert.addAction(action)
+            self.present(alert, animated: true){}
         }
     }
     
