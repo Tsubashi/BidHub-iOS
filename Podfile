@@ -15,4 +15,5 @@ target 'AuctionApp' do
   pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift.git'
   pod 'OneSignal', '>= 2.5.2', '< 3.0'
   pod 'PhoneNumberKit', '>= 1.1.1'
+  pod 'BraintreeDropIn', '>= 6.0.0'
 end

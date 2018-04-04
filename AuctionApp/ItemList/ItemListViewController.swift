@@ -9,6 +9,8 @@ import CSNotificationView
 import Haneke
 import NSDate_RelativeTime
 import Parse
+import BraintreeDropIn
+import Braintree
 
 extension String {
     subscript (i: Int) -> String {
@@ -61,8 +63,6 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.alpha = 0.0
         reloadData(false, initialLoad: true)
         
-        let user = PFUser.current()
-        print("Logged in as: \(String(describing: user!.email))", terminator: "")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -135,7 +135,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.itemProgramNumberLabel.text = item.programNumberString
         cell.itemTitleLabel.text = item.title
-        cell.itemArtistLabel.text = item.artist
+        cell.itemArtistLabel.text = item.name
         cell.itemMediaLabel.text = item.media
         cell.itemSizeLabel.text = item.size
         cell.itemCalloutLabel.text = item.itemCallout
@@ -299,8 +299,23 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
 
     /// Actions
     @IBAction func logoutPressed(_ sender: AnyObject) {
-        PFUser.logOut()
-        performSegue(withIdentifier: "logoutSegue", sender: nil)
+        let logoutAlert = UIAlertController(title: "Confirm Logout", message: "Are you sure you want to log out? If you need to log in again, make sure to use the same email address!", preferredStyle: UIAlertControllerStyle.alert)
+
+        logoutAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
+            PFUser.logOut()
+            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+        }))
+
+        logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            //self.didTapBackground(bidAlert)
+        }))
+        present(logoutAlert, animated: true, completion: nil)
+
+    }
+
+    @IBAction func checkoutPressed(_ sender: Any) {
+        self.view.endEditing(true) // If we try to pop up the payment bar while the keyboard is up, it crashes.
+        fetchClientToken()
     }
     
     @IBAction func segmentBarValueChanged(_ sender: AnyObject) {
@@ -314,13 +329,67 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
                 filterTable(.noBids)
             case 2:
                 filterTable(.myItems)
-            case 3:
-                didPressCategoryFilterTrigger()
             default:
                 filterTable(.all)
         }
     }
-    
+
+    // Braintree functions
+    func fetchClientToken() {
+        // TODO: Switch this URL to your own authenticated API
+        let clientTokenURL = NSURL(string: "https://auction.ucrpc.org/payment/client_token")!
+        let clientTokenRequest = NSMutableURLRequest(url: clientTokenURL as URL)
+        clientTokenRequest.setValue("text/plain", forHTTPHeaderField: "Accept")
+
+        URLSession.shared.dataTask(with: clientTokenRequest as URLRequest) { (data, response, error) -> Void in
+            let httpResponse = response as? HTTPURLResponse
+            if error == nil && httpResponse?.statusCode == 200 {
+                if let usableData = data {
+                    let clientToken = String(data: usableData, encoding: String.Encoding.utf8)
+                    self.showPaymentDropIn(clientTokenOrTokenizationKey: clientToken!)
+                }
+            } else {
+                // Handle Errors
+                self.showError("Try as I might, I couldn't get a token from the payment server. Try again, but if it still isn't working go ahead and inform a moderator. It might be a problem on our end.")
+                print("ERROR!")
+            }
+        }.resume()
+    }
+
+    func showPaymentDropIn(clientTokenOrTokenizationKey: String) {
+        let request =  BTDropInRequest()
+        let dropIn = BTDropInController(authorization: clientTokenOrTokenizationKey, request: request)
+        { (controller, result, error) in
+            if (error != nil) {
+                print("ERROR")
+            } else if (result?.isCancelled == true) {
+                print("CANCELLED")
+            } else if let result = result {
+                // Use the BTDropInResult properties to update your UI
+                // result.paymentOptionType
+                // print(result.paymentMethod)
+                // result.paymentIcon
+                // result.paymentDescription
+                self.postNonceToServer(paymentMethodNonce: result.paymentMethod!.nonce)
+            }
+            controller.dismiss(animated: true, completion: nil)
+        }
+        self.present(dropIn!, animated: true, completion: nil)
+    }
+
+    func postNonceToServer(paymentMethodNonce: String) {
+        // Update URL with your server
+        let paymentURL = URL(string: "https://auction.ucrpc.org/payment/checkout")!
+        var request = URLRequest(url: paymentURL)
+        request.httpBody = "payment_method_nonce=\(paymentMethodNonce)".data(using: String.Encoding.utf8)
+        request.httpMethod = "POST"
+
+        URLSession.shared.dataTask(with: request) { (data, response, error) -> Void in
+            // TODO: Handle success or failure
+            }.resume()
+    }
+
+    // Extras
     func filterTable(_ filter: FilterType) {
         filterType = filter
         self.items = DataManager().sharedInstance.applyFilter(filter)
@@ -347,7 +416,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     func showError(_ errorString: String) {
         if let _: AnyClass = NSClassFromString("UIAlertController") {
             // make and use a UIAlertController
-            let alertView = UIAlertController(title: "Error", message: errorString, preferredStyle: .alert)
+            let alertView = UIAlertController(title: "Uh-Oh!", message: errorString, preferredStyle: .alert)
             
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
                 print("Ok Pressed", terminator: "")
@@ -360,17 +429,6 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
             // make and use a UIAlertView
             let alertView = UIAlertView(title: "Error", message: errorString, delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok")
             alertView.show()
-        }
-    }
-
-    /// Category Filtering
-    func didPressCategoryFilterTrigger() {
-        let catVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CategoryViewController") as? CategoryViewController
-        if let categoryVC = catVC {
-            categoryVC.delegate = self
-            addChildViewController(categoryVC)
-            view.addSubview(categoryVC.view)
-            categoryVC.didMove(toParentViewController: self)
         }
     }
     

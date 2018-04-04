@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vrS-ky-ioH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vrS-ky-ioH">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Light</string>
-            <string>Avenir-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="un1-64-FSE">
@@ -99,13 +91,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAF-Cq-zq8" userLabel="message frame">
                                 <rect key="frame" x="0.0" y="312" width="320" height="168"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" fixedFrame="YES" text="Welcome to the 2018 UCRPC Silent Auction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-Ux-qk2" userLabel="welcomeMessage">
-                                        <rect key="frame" x="6" y="2" width="308" height="164"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PBp-cY-px4">
+                                        <rect key="frame" x="8" y="20" width="304" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <string key="text">Welcome to the 2018 UCRPC Silent Auction. By continuing you agree to be bound by the terms ang conditions found at https://auction.ucrpc.org/rules.html</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -143,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Yj-hX-FT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31.884057971014496" y="80.706521739130437"/>
+            <point key="canvasLocation" x="-33.75" y="80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lfJ-S8-Jzp">
@@ -236,7 +229,7 @@
                                                                     <rect key="frame" x="212" y="10" width="80" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Hfn-Ak-p2j"/>
-                                                                        <constraint firstAttribute="width" constant="80" id="x7T-zJ-9jr"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="x7T-zJ-9jr"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -379,7 +372,7 @@
                                                                     </variation>
                                                                     <variation key="heightClass=regular">
                                                                         <mask key="constraints">
-                                                                            <exclude reference="JGQ-2k-e26"/>
+                                                                            <include reference="JGQ-2k-e26"/>
                                                                         </mask>
                                                                     </variation>
                                                                 </label>
@@ -539,14 +532,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="R85-G7-v1w">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="HSLogOutIcon" id="Cvb-1b-IO8">
+                        <barButtonItem key="leftBarButtonItem" title="LogOut" image="HSLogOutIcon" id="Cvb-1b-IO8">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="logoutPressed:" destination="DqX-rp-Oxg" id="Wev-0t-tFV"/>
                             </connections>
                         </barButtonItem>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xS6-9N-35y">
-                            <rect key="frame" x="51" y="7" width="255" height="30"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xS6-9N-35y">
+                            <rect key="frame" x="57" y="7" width="191" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="All"/>
@@ -558,6 +551,13 @@
                                 <action selector="segmentBarValueChanged:" destination="DqX-rp-Oxg" eventType="valueChanged" id="Po9-Rp-5IY"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="Checkout" image="checkout" id="wMe-tB-4ut">
+                            <inset key="imageInsets" minX="-8" minY="1" maxX="0.0" maxY="-7"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="checkoutPressed:" destination="DqX-rp-Oxg" id="kjf-Ob-GT9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Kz2-GN-CoT" id="rOv-dk-oC7"/>
@@ -570,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5u-9l-V98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1420" y="135.38230884557723"/>
+            <point key="canvasLocation" x="1419.375" y="135"/>
         </scene>
         <!--Bidding View Controller-->
         <scene sceneID="zz1-wr-W1T">
@@ -768,12 +768,6 @@
         <!--Category View Controller-->
         <scene sceneID="RQE-qg-Gmb">
             <objects>
-                <tapGestureRecognizer id="PKl-cW-eyR">
-                    <connections>
-                        <action selector="didTapBackground:" destination="Krt-BP-4rZ" id="1JX-NU-cLP"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUz-Vy-7FM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CategoryViewController" id="Krt-BP-4rZ" customClass="CategoryViewController" customModule="Auction" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a6m-Gn-Pl2"/>
@@ -839,6 +833,12 @@
                         <outlet property="toolbar" destination="iP3-Qb-aAt" id="zrL-4g-GTc"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="PKl-cW-eyR">
+                    <connections>
+                        <action selector="didTapBackground:" destination="Krt-BP-4rZ" id="1JX-NU-cLP"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUz-Vy-7FM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2252" y="-175.86206896551727"/>
         </scene>
@@ -848,5 +848,6 @@
         <image name="HSLogOutIcon" width="18" height="22"/>
         <image name="UCRPC_Logo_wide" width="1861" height="479"/>
         <image name="bidNowButtonSmall" width="80" height="30"/>
+        <image name="checkout" width="43" height="44"/>
     </resources>
 </document>

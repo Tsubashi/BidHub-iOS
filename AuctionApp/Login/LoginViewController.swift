@@ -98,13 +98,9 @@ class LoginViewController: UIViewController {
                     let errorString = error?.localizedDescription
                     let errorCode = error?.code
                     print("Error Signing up: \(String(describing: errorString))", terminator: "")
-                    if errorCode == 202 {
+                    if errorCode == 202 { // 202 means that the user has already signed in once
                         PFUser.logInWithUsername(inBackground: user.username!, password: user.password!, block: { (user, error) -> Void in
                             if error == nil {
-                                OneSignal.syncHashedEmail(user?.email)
-                                OneSignal.promptForPushNotifications(userResponse: { accepted in
-                                    print("User accepted notifications: \(accepted)")
-                                })
                                 self.performSegue(withIdentifier: "loginToItemSegue", sender: nil)
                             }else{
                                 print("Error logging in ", terminator: "")

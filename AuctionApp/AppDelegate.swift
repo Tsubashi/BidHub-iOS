@@ -44,41 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         window?.makeKeyAndVisible()
 
-        // OneSignal Notifications
-        let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in
-            print("Received Notification: \(notification!.payload.notificationID)")
-        }
-        
-        let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
-            // This block gets called when the user reacts to a notification received
-            let payload: OSNotificationPayload = result!.notification.payload
-            
-            var fullMessage = payload.body
-            print("Message = \(String(describing: fullMessage))")
-            
-            if payload.additionalData != nil {
-                if payload.title != nil {
-                    let messageTitle = payload.title
-                    print("Message Title = \(messageTitle!)")
-                }
-                
-                let additionalData = payload.additionalData
-                if additionalData?["actionSelected"] != nil {
-                    fullMessage = fullMessage! + "\nPressed ButtonID: \(String(describing: additionalData!["actionSelected"]))"
-                }
-            }
-        }
-        
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false,
-                                     kOSSettingsKeyInAppLaunchURL: true]
-        
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "45633b58-7400-483a-a42d-3214117ae038",
-                                        handleNotificationReceived: notificationReceivedBlock, 
-                                        handleNotificationAction: notificationOpenedBlock, 
-                                        settings: onesignalInitSettings)
-        
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
+        // Push Notifications
+        let types: UIUserNotificationType = [.alert, .badge, .sound]
+        let settings = UIUserNotificationSettings(types: types, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
         
         return true
     }
@@ -100,15 +70,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Failed to register for remote notifications: \(error.localizedDescription)")
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("Failed to register for remote notifications: \(error.localizedDescription)")
+        }
+    }
+
+    func application(
+        _ application: UIApplication,
+        didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        PFPush.handle(userInfo)
+        completionHandler(.newData)
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "pushRecieved"), object: userInfo)
+        PFPush.handle(userInfo)
     }
-    
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        application.applicationIconBadgeNumber = 0
     }
 }
 
