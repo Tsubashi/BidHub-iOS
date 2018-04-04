@@ -16,7 +16,3 @@ target 'AuctionApp' do
   pod 'OneSignal', '>= 2.5.2', '< 3.0'
   pod 'PhoneNumberKit', '>= 1.1.1'
 end
-
-target 'OneSignalNotificationServiceExtension' do
-    pod 'OneSignal', '>= 2.5.2', '< 3.0'
-end
