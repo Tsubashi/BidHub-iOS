@@ -6,7 +6,6 @@
 import UIKit
 import UserNotifications
 import AFViewShaker
-import OneSignal
 import PhoneNumberKit
 import Parse
 
@@ -89,10 +88,6 @@ class LoginViewController: UIViewController {
             user.signUpInBackground {
                 (succeeded, error) in
                 if succeeded == true {
-                    OneSignal.syncHashedEmail(user.email)
-                    OneSignal.promptForPushNotifications(userResponse: { accepted in
-                        print("User accepted notifications: \(accepted)")
-                    })
                     self.performSegue(withIdentifier: "loginToItemSegue", sender: nil)
                 } else {
                     let errorString = error?.localizedDescription
