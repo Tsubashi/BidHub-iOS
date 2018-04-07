@@ -26,6 +26,15 @@
 		637EEC5D1A1A6D250091C60B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637EEC5C1A1A6D250091C60B /* Images.xcassets */; };
 		637EEC601A1A6D250091C60B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637EEC5E1A1A6D250091C60B /* LaunchScreen.xib */; };
 		63FF2BA01A26463000646D6B /* BlurTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF2B9F1A26463000646D6B /* BlurTransitionSegue.swift */; };
+		B13C1AAC20798492002B7A22 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA620798492002B7A22 /* CheckoutViewController.swift */; };
+		B13C1AAD20798492002B7A22 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */; };
+		B13C1AAE20798492002B7A22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA820798492002B7A22 /* LoginViewController.swift */; };
+		B13C1AAF20798492002B7A22 /* BiddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA920798492002B7A22 /* BiddingViewController.swift */; };
+		B13C1AB020798492002B7A22 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AAA20798492002B7A22 /* CategoryViewController.swift */; };
+		B13C1AB120798492002B7A22 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AAB20798492002B7A22 /* ItemListViewController.swift */; };
+		B13C1AB5207984AC002B7A22 /* Bid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB3207984AC002B7A22 /* Bid.swift */; };
+		B13C1AB6207984AD002B7A22 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB4207984AC002B7A22 /* Item.swift */; };
+		B13C1AB9207984D4002B7A22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB8207984D4002B7A22 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +92,15 @@
 		63FF2B9F1A26463000646D6B /* BlurTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurTransitionSegue.swift; sourceTree = "<group>"; };
 		69CADD4CA423065FEB76AEC8 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		7F62DD048EF783FF14C98FE7 /* Pods-AuctionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuctionApp/Pods-AuctionApp.release.xcconfig"; sourceTree = "<group>"; };
+		B13C1AA620798492002B7A22 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		B13C1AA820798492002B7A22 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B13C1AA920798492002B7A22 /* BiddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingViewController.swift; sourceTree = "<group>"; };
+		B13C1AAA20798492002B7A22 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		B13C1AAB20798492002B7A22 /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		B13C1AB3207984AC002B7A22 /* Bid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bid.swift; sourceTree = "<group>"; };
+		B13C1AB4207984AC002B7A22 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B13C1AB8207984D4002B7A22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F99796D8904C7364A996D11D /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		FAB1C957182FA12586DC31F1 /* Pods-AuctionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuctionApp/Pods-AuctionApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +179,9 @@
 		637EEC521A1A6D250091C60B /* AuctionApp */ = {
 			isa = PBXGroup;
 			children = (
+				B13C1AB7207984B4002B7A22 /* Manager */,
+				B13C1AB22079849E002B7A22 /* Models */,
+				B13C1AA52079847C002B7A22 /* ViewControllers */,
 				0F6F3FDC1EB2DCAA00856EE0 /* Auction.entitlements */,
 				637CD89F1A1C20A9002FF762 /* ThirdParty */,
 				637EEC551A1A6D250091C60B /* AppDelegate.swift */,
@@ -209,6 +230,36 @@
 				637EEC6A1A1A6D250091C60B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B13C1AA52079847C002B7A22 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B13C1AA920798492002B7A22 /* BiddingViewController.swift */,
+				B13C1AAA20798492002B7A22 /* CategoryViewController.swift */,
+				B13C1AA620798492002B7A22 /* CheckoutViewController.swift */,
+				B13C1AAB20798492002B7A22 /* ItemListViewController.swift */,
+				B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */,
+				B13C1AA820798492002B7A22 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B13C1AB22079849E002B7A22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B13C1AB3207984AC002B7A22 /* Bid.swift */,
+				B13C1AB4207984AC002B7A22 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B13C1AB7207984B4002B7A22 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B13C1AB8207984D4002B7A22 /* DataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		D554CCEEA1386A808A25C05F /* Pods */ = {
@@ -372,7 +423,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B13C1AB6207984AD002B7A22 /* Item.swift in Sources */,
+				B13C1AAD20798492002B7A22 /* ItemTableViewCell.swift in Sources */,
+				B13C1AB120798492002B7A22 /* ItemListViewController.swift in Sources */,
 				63FF2BA01A26463000646D6B /* BlurTransitionSegue.swift in Sources */,
+				B13C1AB020798492002B7A22 /* CategoryViewController.swift in Sources */,
+				B13C1AAF20798492002B7A22 /* BiddingViewController.swift in Sources */,
+				B13C1AAC20798492002B7A22 /* CheckoutViewController.swift in Sources */,
+				B13C1AAE20798492002B7A22 /* LoginViewController.swift in Sources */,
+				B13C1AB9207984D4002B7A22 /* DataManager.swift in Sources */,
+				B13C1AB5207984AC002B7A22 /* Bid.swift in Sources */,
 				637EEC561A1A6D250091C60B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
