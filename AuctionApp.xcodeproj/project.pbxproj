@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F741D3B1EDB5FD700E56274 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F741D3A1EDB5FD700E56274 /* CategoryViewController.swift */; };
 		0FBD57351CFBFF530020DABB /* NSDate+RelativeTime.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FBD57341CFBFF530020DABB /* NSDate+RelativeTime.bundle */; };
 		5A5B2462AB5000211FF7CD13 /* Pods_AuctionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */; };
 		634C33461A1A7C6C0002E9AD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C33441A1A7C6C0002E9AD /* Bolts.framework */; };
@@ -22,18 +21,10 @@
 		634C33571A1A7CC00002E9AD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C33561A1A7CC00002E9AD /* Security.framework */; };
 		634C33591A1A7CC80002E9AD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C33581A1A7CC80002E9AD /* StoreKit.framework */; };
 		634C335B1A1A7CCD0002E9AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C335A1A1A7CCD0002E9AD /* SystemConfiguration.framework */; };
-		634C33661A1A7FDB0002E9AD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634C33651A1A7FDB0002E9AD /* Item.swift */; };
-		634C33681A1A7FE30002E9AD /* Bid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634C33671A1A7FE30002E9AD /* Bid.swift */; };
-		6372258D1A1CEE46003EC016 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6372258C1A1CEE46003EC016 /* ItemTableViewCell.swift */; };
 		637EEC561A1A6D250091C60B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637EEC551A1A6D250091C60B /* AppDelegate.swift */; };
 		637EEC5B1A1A6D250091C60B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637EEC591A1A6D250091C60B /* Main.storyboard */; };
 		637EEC5D1A1A6D250091C60B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637EEC5C1A1A6D250091C60B /* Images.xcassets */; };
 		637EEC601A1A6D250091C60B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637EEC5E1A1A6D250091C60B /* LaunchScreen.xib */; };
-		63EA13071A1ABCBE002BDFDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA13061A1ABCBE002BDFDF /* LoginViewController.swift */; };
-		63EA13091A1ABCD1002BDFDF /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EA13081A1ABCD1002BDFDF /* ItemListViewController.swift */; };
-		63EE70431A1AC1B500B3EE74 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE70421A1AC1B500B3EE74 /* DataManager.swift */; };
-		63FF2B9B1A26442100646D6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF2B9A1A26442100646D6B /* Constants.swift */; };
-		63FF2B9E1A2644AE00646D6B /* BiddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF2B9D1A2644AE00646D6B /* BiddingViewController.swift */; };
 		63FF2BA01A26463000646D6B /* BlurTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF2B9F1A26463000646D6B /* BlurTransitionSegue.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +56,6 @@
 		0F6F3FE31EB32B9A00856EE0 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		0F6F3FE41EB32B9A00856EE0 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		0F6F3FE61EB32B9A00856EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F741D3A1EDB5FD700E56274 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = CategoryVC/CategoryViewController.swift; sourceTree = "<group>"; };
 		0FBD57341CFBFF530020DABB /* NSDate+RelativeTime.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "NSDate+RelativeTime.bundle"; sourceTree = "<group>"; };
 		21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuctionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B64373DE521A638A0B7C9C7 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,9 +72,6 @@
 		634C33581A1A7CC80002E9AD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		634C335A1A1A7CCD0002E9AD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		634C335C1A1A7CF40002E9AD /* AuctionApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AuctionApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		634C33651A1A7FDB0002E9AD /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Models/Item.swift; sourceTree = "<group>"; };
-		634C33671A1A7FE30002E9AD /* Bid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bid.swift; path = Models/Bid.swift; sourceTree = "<group>"; };
-		6372258C1A1CEE46003EC016 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = ItemList/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		637EEC501A1A6D250091C60B /* Auction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637EEC541A1A6D250091C60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637EEC551A1A6D250091C60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,11 +80,6 @@
 		637EEC5F1A1A6D250091C60B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		637EEC6A1A1A6D250091C60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637EEC6B1A1A6D250091C60B /* AuctionAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionAppTests.swift; sourceTree = "<group>"; };
-		63EA13061A1ABCBE002BDFDF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
-		63EA13081A1ABCD1002BDFDF /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemListViewController.swift; path = ItemList/ItemListViewController.swift; sourceTree = "<group>"; };
-		63EE70421A1AC1B500B3EE74 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Manager/DataManager.swift; sourceTree = "<group>"; };
-		63FF2B9A1A26442100646D6B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		63FF2B9D1A2644AE00646D6B /* BiddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BiddingViewController.swift; path = BiddingVC/BiddingViewController.swift; sourceTree = "<group>"; };
 		63FF2B9F1A26463000646D6B /* BlurTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurTransitionSegue.swift; sourceTree = "<group>"; };
 		69CADD4CA423065FEB76AEC8 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		7F62DD048EF783FF14C98FE7 /* Pods-AuctionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuctionApp/Pods-AuctionApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,14 +121,6 @@
 			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
-		0F741D391EDB5F9800E56274 /* Category VC */ = {
-			isa = PBXGroup;
-			children = (
-				0F741D3A1EDB5FD700E56274 /* CategoryViewController.swift */,
-			);
-			name = "Category VC";
-			sourceTree = "<group>";
-		};
 		1A585E4998190DCF18CAA863 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,15 +128,6 @@
 				4B64373DE521A638A0B7C9C7 /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		634C33641A1A7FB90002E9AD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				634C33651A1A7FDB0002E9AD /* Item.swift */,
-				634C33671A1A7FE30002E9AD /* Bid.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		637CD89F1A1C20A9002FF762 /* ThirdParty */ = {
@@ -196,14 +161,8 @@
 		637EEC521A1A6D250091C60B /* AuctionApp */ = {
 			isa = PBXGroup;
 			children = (
-				0F741D391EDB5F9800E56274 /* Category VC */,
 				0F6F3FDC1EB2DCAA00856EE0 /* Auction.entitlements */,
-				63FF2B9C1A26446E00646D6B /* Bidding VC */,
 				637CD89F1A1C20A9002FF762 /* ThirdParty */,
-				63EA130C1A1ABD27002BDFDF /* Managers */,
-				63EA13041A1ABB27002BDFDF /* Item List View */,
-				63EA13031A1ABB23002BDFDF /* Login View */,
-				634C33641A1A7FB90002E9AD /* Models */,
 				637EEC551A1A6D250091C60B /* AppDelegate.swift */,
 				637EEC591A1A6D250091C60B /* Main.storyboard */,
 				637EEC5C1A1A6D250091C60B /* Images.xcassets */,
@@ -252,40 +211,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63EA13031A1ABB23002BDFDF /* Login View */ = {
-			isa = PBXGroup;
-			children = (
-				63EA13061A1ABCBE002BDFDF /* LoginViewController.swift */,
-			);
-			name = "Login View";
-			sourceTree = "<group>";
-		};
-		63EA13041A1ABB27002BDFDF /* Item List View */ = {
-			isa = PBXGroup;
-			children = (
-				63EA13081A1ABCD1002BDFDF /* ItemListViewController.swift */,
-				6372258C1A1CEE46003EC016 /* ItemTableViewCell.swift */,
-			);
-			name = "Item List View";
-			sourceTree = "<group>";
-		};
-		63EA130C1A1ABD27002BDFDF /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				63EE70421A1AC1B500B3EE74 /* DataManager.swift */,
-				63FF2B9A1A26442100646D6B /* Constants.swift */,
-			);
-			name = Managers;
-			sourceTree = "<group>";
-		};
-		63FF2B9C1A26446E00646D6B /* Bidding VC */ = {
-			isa = PBXGroup;
-			children = (
-				63FF2B9D1A2644AE00646D6B /* BiddingViewController.swift */,
-			);
-			name = "Bidding VC";
-			sourceTree = "<group>";
-		};
 		D554CCEEA1386A808A25C05F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,7 +235,6 @@
 				637EEC4E1A1A6D250091C60B /* Resources */,
 				634C333C1A1A7C590002E9AD /* Embed Frameworks */,
 				89DEECE569B129267922D31A /* [CP] Embed Pods Frameworks */,
-				6A1FB173330FAC8F4D12947A /* [CP] Copy Pods Resources */,
 				0F6F3FED1EB32B9A00856EE0 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -381,21 +305,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6A1FB173330FAC8F4D12947A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AuctionApp/Pods-AuctionApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6ECD22F4D4A1299111BB8906 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,17 +372,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63EE70431A1AC1B500B3EE74 /* DataManager.swift in Sources */,
-				63FF2B9B1A26442100646D6B /* Constants.swift in Sources */,
-				63FF2B9E1A2644AE00646D6B /* BiddingViewController.swift in Sources */,
-				634C33661A1A7FDB0002E9AD /* Item.swift in Sources */,
 				63FF2BA01A26463000646D6B /* BlurTransitionSegue.swift in Sources */,
 				637EEC561A1A6D250091C60B /* AppDelegate.swift in Sources */,
-				63EA13071A1ABCBE002BDFDF /* LoginViewController.swift in Sources */,
-				634C33681A1A7FE30002E9AD /* Bid.swift in Sources */,
-				63EA13091A1ABCD1002BDFDF /* ItemListViewController.swift in Sources */,
-				0F741D3B1EDB5FD700E56274 /* CategoryViewController.swift in Sources */,
-				6372258D1A1CEE46003EC016 /* ItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

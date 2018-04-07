@@ -13,7 +13,6 @@ target 'AuctionApp' do
   pod 'UIImage-Resize', '>= 1.0'
   pod 'CSNotificationView', '>= 0.5'
   pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift.git'
-  pod 'OneSignal', '>= 2.5.2', '< 3.0'
   pod 'PhoneNumberKit', '>= 1.1.1'
   pod 'BraintreeDropIn', '>= 6.0.0'
 end
