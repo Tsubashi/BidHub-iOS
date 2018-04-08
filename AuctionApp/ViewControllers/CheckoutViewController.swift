@@ -2,33 +2,67 @@
 //  CheckoutViewController.swift
 //  AuctionApp
 //
-//  Created by Scott Family on 4/7/18.
-//  Copyright © 2018 fitz.guru. All rights reserved.
-//
 
 import Foundation
 import BraintreeDropIn
 import Braintree
 import SVProgressHUD
 
+class CheckoutTableViewCell: UITableViewCell {
+    
+    @IBOutlet var itemImageView: UIImageView!
+    @IBOutlet var itemName: UILabel!
+    @IBOutlet var itemPurchasedStatus: UILabel!
+    @IBOutlet var itemPrice: UILabel!
+    
+    func viewDidLoad() {
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        itemImageView.contentMode = .scaleAspectFill
+        itemImageView.clipsToBounds = true
+    }
+}
 
-class CheckoutViewController: UIViewController {
+class CheckoutViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var totalPriceLabel: UILabel!
+    
+    var sizingCell: CheckoutTableViewCell?
+    var itemsWon:[Item] = []
+    var totalPrice:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.setBackgroundColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0))
+        SVProgressHUD.setBackgroundColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.25))
         SVProgressHUD.setForegroundColor(UIColor(red: 242/255, green: 109/255, blue: 59/255, alpha: 1.0))
         SVProgressHUD.setRingThickness(5.0)
         SVProgressHUD.show()
+        
+        sizingCell = tableView.dequeueReusableCell(withIdentifier: "CheckoutTableViewCell") as? CheckoutTableViewCell
+        
+        tableView.estimatedRowHeight = 64
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         DataManager().sharedInstance.getItems{ (items, error) in
             if error != nil {
                 // Error Case
                 self.showError("I'm afraid I couldn't get the latest list of items, so I've no idea if you have won anything. Make sure you are connected to the internet and try again.", extraInfo: "Error: '\(String(describing: error))'", onOk: {self.dismiss(animated: true, completion: nil)})
                 print("Error getting items", terminator: "")
                 self.dismiss(animated: true, completion: nil)
+            } else {
+                for item in items {
+                    if item.isWinning /* TODO: Check that bidding is closed and item is not yet paid for */{
+                        self.itemsWon.append(item)
+                        self.totalPrice += item.price
+                    }
+                }
             }
         }
+        totalPriceLabel.text = String("$\(totalPrice)")
         SVProgressHUD.dismiss()
-        
     }
     
     // Actions
@@ -40,6 +74,32 @@ class CheckoutViewController: UIViewController {
         SVProgressHUD.show()
         fetchClientToken()
         SVProgressHUD.dismiss(withDelay: 3)
+    }
+    
+    // TableView Data functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemsWon.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! CheckoutTableViewCell
+        let item = itemsWon[indexPath.row];
+        
+        if let imageUrl = URL(string: item.imageUrl) {
+            cell.itemImageView.hnk_setImageFromURL(imageUrl, placeholder: UIImage(named: "blank")!)
+        } else {
+            print("Unable to get item image")
+        }
+        
+        cell.itemName.text = item.name
+        cell.itemPrice.text = String(item.price)
+        cell.itemPurchasedStatus.text = ""
+        
+        return cell
     }
     
     // Braintree functions

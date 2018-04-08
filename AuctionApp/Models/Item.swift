@@ -13,7 +13,7 @@ enum ItemWinnerType {
 
 class Item: PFObject, PFSubclassing {
     
-    @NSManaged var name:String
+    //@NSManaged var name:String
     @NSManaged var price:Int
     
     var priceIncrement:Int {
@@ -91,16 +91,16 @@ class Item: PFObject, PFSubclassing {
         }
     }
 
-    var artist:String {
+    var name:String {
         get {
-            if let artistName =  self["artist"] as? String{
-                return artistName
+            if let itemName =  self["name"] as? String{
+                return itemName
             }else{
                 return ""
             }
         }
         set {
-            self["artist"] = newValue
+            self["name"] = newValue
         }
     }
     

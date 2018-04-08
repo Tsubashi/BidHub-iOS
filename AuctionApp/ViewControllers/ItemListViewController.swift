@@ -37,7 +37,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.setBackgroundColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0))
+        SVProgressHUD.setBackgroundColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.25))
         SVProgressHUD.setForegroundColor(UIColor(red: 242/255, green: 109/255, blue: 59/255, alpha: 1.0))
         SVProgressHUD.setRingThickness(5.0)
         
@@ -277,7 +277,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
                 self.reloadData()
                 SVProgressHUD.dismiss()
             }else{
-                self.showError(errorString)
+                self.showError("I'm very sorry, but I couldn't place your bid. The issue was '\(errorString)'")
                 self.reloadData()
                 SVProgressHUD.dismiss()
             }

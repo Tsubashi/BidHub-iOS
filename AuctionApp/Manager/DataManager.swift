@@ -38,23 +38,6 @@ class DataManager: NSObject {
         }
     }
     
-    func getItemsWon(_ completion: @escaping ([Item], NSError?) -> ()){
-        let query = Item.query()
-        query!.limit = 1000
-        query!.addAscendingOrder("programNumber")
-        query!.findObjectsInBackground { (results, error) -> Void in
-            if error != nil{
-                print("Error!! \(String(describing: error))", terminator: "")
-                completion([Item](), error as NSError?)
-            }else{
-                if let itemsUW = results as? [Item] {
-                    self.allItems = itemsUW
-                    completion(itemsUW, nil)
-                }
-            }
-        }
-    }
-    
     func searchForQuery(_ query: String) -> ([Item]) {
         return applyFilter(.search(searchTerm: query))
     }
