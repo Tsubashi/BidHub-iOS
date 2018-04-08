@@ -8,7 +8,6 @@ import Parse
 
 protocol ItemTableViewCellDelegate {
     func cellDidPressBid(_ item: Item)
-    func cellImageTapped(_ item: Item)
 }
 
 class ItemTableViewCell: UITableViewCell {
@@ -55,10 +54,6 @@ class ItemTableViewCell: UITableViewCell {
         itemImageView.clipsToBounds = true
         alreadyLoaded = false
 
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ItemTableViewCell.didTapImage))
-        itemImageView.addGestureRecognizer(tapGestureRecognizer)
-        itemImageView.isUserInteractionEnabled = true
-
         itemProgramNumberLabel.layer.cornerRadius = itemProgramNumberLabel.frame.size.height/2
         itemProgramNumberLabel.layer.masksToBounds = true
         
@@ -75,10 +70,6 @@ class ItemTableViewCell: UITableViewCell {
                 delegateUW.cellDidPressBid(itemUW)
             }
         }
-    }
-
-    func didTapImage(){
-        delegate?.cellImageTapped(item!)
     }
     
     func setWinning(){
@@ -104,7 +95,7 @@ class ItemTableViewCell: UITableViewCell {
         headerBackground.backgroundColor = outbidBackgroundColor
         moreInfoView.isHidden = false
         moreInfoView.backgroundColor = outbidBackgroundColor
-        moreInfoLabel.text = "YOU'VE BEEN OUTBID. TRY HARDER?"
+        moreInfoLabel.text = "YIKES! YOU'VE BEEN OUTBID. KEEP TRYING?"
     }
     
     func setDefault(){

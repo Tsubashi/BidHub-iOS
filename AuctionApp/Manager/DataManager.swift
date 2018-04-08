@@ -38,6 +38,23 @@ class DataManager: NSObject {
         }
     }
     
+    func getItemsWon(_ completion: @escaping ([Item], NSError?) -> ()){
+        let query = Item.query()
+        query!.limit = 1000
+        query!.addAscendingOrder("programNumber")
+        query!.findObjectsInBackground { (results, error) -> Void in
+            if error != nil{
+                print("Error!! \(String(describing: error))", terminator: "")
+                completion([Item](), error as NSError?)
+            }else{
+                if let itemsUW = results as? [Item] {
+                    self.allItems = itemsUW
+                    completion(itemsUW, nil)
+                }
+            }
+        }
+    }
+    
     func searchForQuery(_ query: String) -> ([Item]) {
         return applyFilter(.search(searchTerm: query))
     }
@@ -97,7 +114,6 @@ enum FilterType: CustomStringConvertible {
     case noBids
     case myItems
     case search(searchTerm: String)
-    case category(filterValue: String)
     
     var description: String {
         switch self{
@@ -107,8 +123,6 @@ enum FilterType: CustomStringConvertible {
                 return "NoBids"
             case .myItems:
                 return "My Items"
-            case .category:
-                return "Filtering"
             case .search:
                 return "Searching"
         }
@@ -134,13 +148,6 @@ enum FilterType: CustomStringConvertible {
                 })
             case .search(let searchTerm):
                 return NSPredicate(format: "(artist CONTAINS[c] %@) || (title CONTAINS[c] %@) || (itemDesctiption CONTAINS[c] %@) || (media CONTAINS[c] %@) || (programNumberString CONTAINS[c] %@)", searchTerm, searchTerm, searchTerm, searchTerm, searchTerm)
-            case .category(let filterValue):
-                return NSPredicate(block: { (object, bindings) -> Bool in
-                    if let item = object as? Item {
-                        return item.isInCategory(cat: filterValue)
-                    }
-                    return false
-                })
         }
     }
 }

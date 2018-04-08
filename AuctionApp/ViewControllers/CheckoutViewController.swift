@@ -9,9 +9,27 @@
 import Foundation
 import BraintreeDropIn
 import Braintree
+import SVProgressHUD
 
 
 class CheckoutViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        SVProgressHUD.setBackgroundColor(UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0))
+        SVProgressHUD.setForegroundColor(UIColor(red: 242/255, green: 109/255, blue: 59/255, alpha: 1.0))
+        SVProgressHUD.setRingThickness(5.0)
+        SVProgressHUD.show()
+        DataManager().sharedInstance.getItems{ (items, error) in
+            if error != nil {
+                // Error Case
+                self.showError("I'm afraid I couldn't get the latest list of items, so I've no idea if you have won anything. Make sure you are connected to the internet and try again.", extraInfo: "Error: '\(String(describing: error))'", onOk: {self.dismiss(animated: true, completion: nil)})
+                print("Error getting items", terminator: "")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        SVProgressHUD.dismiss()
+        
+    }
     
     // Actions
     @IBAction func cancelPressed(_ sender: Any) {
@@ -19,7 +37,9 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func checkoutPressed(_ sender: Any) {
+        SVProgressHUD.show()
         fetchClientToken()
+        SVProgressHUD.dismiss(withDelay: 3)
     }
     
     // Braintree functions
@@ -78,20 +98,22 @@ class CheckoutViewController: UIViewController {
     }
     
     // Extra Functions
-    func showError(_ errorString: String, extraInfo: String? = nil) {
+    func showError(_ errorString: String, extraInfo: String? = nil, onOk: (() -> Void)? = nil) {
         if let _: AnyClass = NSClassFromString("UIAlertController") {
             // make and use a UIAlertController
             let alertView = UIAlertController(title: "Uh-Oh!", message: errorString, preferredStyle: .alert)
             
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
-                // Do Nothing
+                onOk?()
             })
             alertView.addAction(okAction)
             
             if let extraInfo = extraInfo {
                 let moreInfoAction = UIAlertAction(title: "More Info", style: .default, handler: { (action) -> Void in
                     let secondAlertView = UIAlertController(title: "Technical Details", message: extraInfo, preferredStyle: .alert)
-                    let secondOkAction = UIAlertAction(title: "Ok", style: .default)
+                    let secondOkAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+                        onOk?()
+                    })
                     secondAlertView.addAction(secondOkAction)
                     self.present(secondAlertView, animated: true){}
                 })

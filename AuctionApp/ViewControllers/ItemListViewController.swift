@@ -17,7 +17,8 @@ extension String {
     }
 }
 
-class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UIScrollViewDelegate, ItemTableViewCellDelegate, BiddingViewControllerDelegate, CategoryViewControllerDelegate {
+class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UIScrollViewDelegate, ItemTableViewCellDelegate, BiddingViewControllerDelegate {
+    
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var segmentControl: UISegmentedControl!
@@ -128,7 +129,11 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     func configureCellForIndexPath(_ cell: ItemTableViewCell, indexPath: IndexPath) -> ItemTableViewCell {
         let item = items[indexPath.row];
         
-        cell.itemImageView.hnk_setImageFromURL(URL(string: item.imageUrl)!, placeholder: UIImage(named: "blank")!)
+        if let imageUrl = URL(string: item.imageUrl) {
+            cell.itemImageView.hnk_setImageFromURL(imageUrl, placeholder: UIImage(named: "blank")!)
+        } else {
+            print("Unable to get item image")
+        }
         
         cell.itemProgramNumberLabel.text = item.programNumberString
         cell.itemTitleLabel.text = item.title
@@ -214,84 +219,6 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
             view.addSubview(biddingVC.view)
             biddingVC.didMove(toParentViewController: self)
         }
-    }
-
-    /// Image Detail Zoom
-    func cellImageTapped(_ item: Item) {
-        zoomImageView.frame = view.bounds
-        zoomImageView.clipsToBounds = false
-        zoomImageView.contentMode = .scaleAspectFit
-        zoomImageView.hnk_setImageFromURL(URL(string: item.imageUrl)!, placeholder: UIImage(named: "blank")!)
-        
-        zoomOverlay = UIScrollView(frame: view.bounds)
-        
-        zoomOverlay.tag = 420
-        zoomOverlay.delegate = self
-        zoomOverlay.backgroundColor = UIColor.darkGray
-        zoomOverlay.alwaysBounceVertical = false
-        zoomOverlay.alwaysBounceHorizontal = false
-        zoomOverlay.showsVerticalScrollIndicator = true
-        zoomOverlay.flashScrollIndicators()
-        
-        zoomOverlay.minimumZoomScale = 1.0
-        zoomOverlay.maximumZoomScale = 6.0
-        
-        let backButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(ItemListViewController.pressedClose(_:)))
-        navigationItem.leftBarButtonItem = nil
-        navigationItem.rightBarButtonItem = backButton
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
-
-        segmentControl.isHidden = true
-        
-        zoomOverlay.addSubview(zoomImageView)
-        
-        self.view.addSubview(zoomOverlay)
-        setupZoomGestureRecognizer()
-    }
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return zoomImageView
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let imageViewSize = zoomImageView.frame.size
-        let scrollViewSize = zoomOverlay.bounds.size
-        
-        let verticalPadding = imageViewSize.height < scrollViewSize.height ? (scrollViewSize.height - imageViewSize.height) / 2 : 0
-        let horizontalPadding = imageViewSize.width < scrollViewSize.width ? (scrollViewSize.width - imageViewSize.width) / 2 : 0
-        
-        zoomOverlay.contentInset = UIEdgeInsets(top: verticalPadding, left: horizontalPadding, bottom: verticalPadding, right: horizontalPadding)
-    }
-    
-    func setupZoomGestureRecognizer() {
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(ItemListViewController.handleZoomImageDoubleTap(_:)))
-        doubleTap.numberOfTapsRequired = 2
-        zoomOverlay.addGestureRecognizer(doubleTap)
-    }
-    
-    func handleZoomImageDoubleTap(_ recognizer: UITapGestureRecognizer) {
-        if (zoomOverlay.zoomScale > zoomOverlay.minimumZoomScale) {
-            zoomOverlay.setZoomScale(zoomOverlay.minimumZoomScale, animated: true)
-        } else {
-            zoomOverlay.setZoomScale(zoomOverlay.maximumZoomScale, animated: true)
-        }
-    }
-    
-    func pressedClose(_ sender: UIButton!) {
-        self.segmentControl.isHidden = false
-        
-        if let viewWithTag = self.view.viewWithTag(420) {
-            viewWithTag.removeFromSuperview()
-        }
-        
-        let btnName = UIButton()
-        btnName.setImage(UIImage(named: "HSLogOutIcon"), for: UIControlState())
-        btnName.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        btnName.addTarget(self, action: #selector(ItemListViewController.logoutPressed(_:)), for: .touchUpInside)
-        
-        let leftBarButton = UIBarButtonItem(customView: btnName)
-        navigationItem.leftBarButtonItem = leftBarButton
-        navigationItem.rightBarButtonItem = nil
     }
 
     /// Actions
@@ -410,17 +337,5 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func biddingViewControllerDidCancel(_ viewController: BiddingViewController){
         viewController.view.removeFromSuperview()
-    }
-    
-    /// Category VC
-    func categoryViewControllerDidFilter(_ viewController: CategoryViewController, onCategory: String){
-        viewController.view.removeFromSuperview()
-        filterTable(.category(filterValue: onCategory))
-    }
-    
-    func categoryViewControllerDidCancel(_ viewController: CategoryViewController){
-        viewController.view.removeFromSuperview()
-        self.segmentControl.selectedSegmentIndex = 0
-        segmentBarValueChanged(self.segmentControl)
     }
 }

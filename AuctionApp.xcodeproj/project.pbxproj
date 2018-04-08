@@ -30,7 +30,6 @@
 		B13C1AAD20798492002B7A22 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */; };
 		B13C1AAE20798492002B7A22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA820798492002B7A22 /* LoginViewController.swift */; };
 		B13C1AAF20798492002B7A22 /* BiddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA920798492002B7A22 /* BiddingViewController.swift */; };
-		B13C1AB020798492002B7A22 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AAA20798492002B7A22 /* CategoryViewController.swift */; };
 		B13C1AB120798492002B7A22 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AAB20798492002B7A22 /* ItemListViewController.swift */; };
 		B13C1AB5207984AC002B7A22 /* Bid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB3207984AC002B7A22 /* Bid.swift */; };
 		B13C1AB6207984AD002B7A22 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB4207984AC002B7A22 /* Item.swift */; };
@@ -62,9 +61,6 @@
 
 /* Begin PBXFileReference section */
 		0F6F3FDC1EB2DCAA00856EE0 /* Auction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Auction.entitlements; sourceTree = "<group>"; };
-		0F6F3FE31EB32B9A00856EE0 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
-		0F6F3FE41EB32B9A00856EE0 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
-		0F6F3FE61EB32B9A00856EE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FBD57341CFBFF530020DABB /* NSDate+RelativeTime.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "NSDate+RelativeTime.bundle"; sourceTree = "<group>"; };
 		21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuctionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B64373DE521A638A0B7C9C7 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +92,6 @@
 		B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		B13C1AA820798492002B7A22 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B13C1AA920798492002B7A22 /* BiddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingViewController.swift; sourceTree = "<group>"; };
-		B13C1AAA20798492002B7A22 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		B13C1AAB20798492002B7A22 /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		B13C1AB3207984AC002B7A22 /* Bid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bid.swift; sourceTree = "<group>"; };
 		B13C1AB4207984AC002B7A22 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -129,16 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F6F3FE21EB32B9A00856EE0 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				0F6F3FE31EB32B9A00856EE0 /* NotificationService.h */,
-				0F6F3FE41EB32B9A00856EE0 /* NotificationService.m */,
-				0F6F3FE61EB32B9A00856EE0 /* Info.plist */,
-			);
-			path = OneSignalNotificationServiceExtension;
-			sourceTree = "<group>";
-		};
 		1A585E4998190DCF18CAA863 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +146,6 @@
 			children = (
 				637EEC521A1A6D250091C60B /* AuctionApp */,
 				637EEC681A1A6D250091C60B /* AuctionAppTests */,
-				0F6F3FE21EB32B9A00856EE0 /* OneSignalNotificationServiceExtension */,
 				637EEC511A1A6D250091C60B /* Products */,
 				D554CCEEA1386A808A25C05F /* Pods */,
 				1A585E4998190DCF18CAA863 /* Frameworks */,
@@ -236,11 +220,10 @@
 			isa = PBXGroup;
 			children = (
 				B13C1AA920798492002B7A22 /* BiddingViewController.swift */,
-				B13C1AAA20798492002B7A22 /* CategoryViewController.swift */,
 				B13C1AA620798492002B7A22 /* CheckoutViewController.swift */,
+				B13C1AA820798492002B7A22 /* LoginViewController.swift */,
 				B13C1AAB20798492002B7A22 /* ItemListViewController.swift */,
 				B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */,
-				B13C1AA820798492002B7A22 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -427,7 +410,6 @@
 				B13C1AAD20798492002B7A22 /* ItemTableViewCell.swift in Sources */,
 				B13C1AB120798492002B7A22 /* ItemListViewController.swift in Sources */,
 				63FF2BA01A26463000646D6B /* BlurTransitionSegue.swift in Sources */,
-				B13C1AB020798492002B7A22 /* CategoryViewController.swift in Sources */,
 				B13C1AAF20798492002B7A22 /* BiddingViewController.swift in Sources */,
 				B13C1AAC20798492002B7A22 /* CheckoutViewController.swift in Sources */,
 				B13C1AAE20798492002B7A22 /* LoginViewController.swift in Sources */,
