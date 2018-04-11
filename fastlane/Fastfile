@@ -1,0 +1,35 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Generate new localized screenshots"
+  lane :screenshots do
+    cocoapods
+    capture_screenshots(workspace: "AuctionApp.xcworkspace", scheme: "AuctionSnaps")
+    upload_to_app_store(skip_binary_upload: true, skip_metadata: true)
+  end
+  lane :beta do
+  desc "Create a beta"
+    cocoapods
+    increment_build_number(
+      build_number: latest_testflight_build_number + 1,
+      xcodeproj: "AuctionApp.xcodeproj"
+    )
+    build_app(workspace: "AuctionApp.xcworkspace", scheme: "AuctionApp")
+    commit_version_bump(xcodeproj: "AuctionApp.xcodeproj")
+    add_git_tag
+    push_to_git_remote
+    changelog_from_git_commits
+    upload_to_testflight
+  end
+end

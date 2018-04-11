@@ -27,7 +27,7 @@ class AuctionSnaps: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testSnapshots() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let app = XCUIApplication()
@@ -43,6 +43,7 @@ class AuctionSnaps: XCTestCase {
         }
         sleep(2)
         snapshot("0Launch")
+        sleep(1)
 
         let nameTextField = app.textFields["First and Last Name"]
         nameTextField.tap()
@@ -56,9 +57,12 @@ class AuctionSnaps: XCTestCase {
         phoneTextField.tap()
         phoneTextField.typeText("000")
 
+        emailTextField.tap()
+
         app.buttons["Start"].tap()
         sleep(1)
-        snapshot("0Launch")
+        snapshot("0Main")
+        sleep(1)
         app.navigationBars["Auction.ItemListView"].buttons["LogOut"].tap()
         app.alerts["Confirm Logout"].buttons["Logout"].tap()
 
