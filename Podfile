@@ -4,7 +4,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'AuctionApp' do
-  pod 'Parse'
+  pod 'Parse', '>= 1.15.3'
   pod 'AFNetworking', :git => 'https://github.com/AFNetworking/AFNetworking.git'
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   pod 'AFViewShaker', '>= 0.0.2'

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0FBD57351CFBFF530020DABB /* NSDate+RelativeTime.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FBD57341CFBFF530020DABB /* NSDate+RelativeTime.bundle */; };
+		583E30D0207E914600570E88 /* AuctionSnaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583E30CF207E914600570E88 /* AuctionSnaps.swift */; };
+		583E30D8207E91B700570E88 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583E30D7207E91B700570E88 /* SnapshotHelper.swift */; };
 		5A5B2462AB5000211FF7CD13 /* Pods_AuctionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */; };
 		634C33461A1A7C6C0002E9AD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C33441A1A7C6C0002E9AD /* Bolts.framework */; };
 		634C33471A1A7C6C0002E9AD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634C33451A1A7C6C0002E9AD /* Parse.framework */; };
@@ -34,7 +36,18 @@
 		B13C1AB5207984AC002B7A22 /* Bid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB3207984AC002B7A22 /* Bid.swift */; };
 		B13C1AB6207984AD002B7A22 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB4207984AC002B7A22 /* Item.swift */; };
 		B13C1AB9207984D4002B7A22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB8207984D4002B7A22 /* DataManager.swift */; };
+		E0C72A08AF648F209B94888E /* Pods_UCRPCAuction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6293B9CD8E8FD903FE11A119 /* Pods_UCRPCAuction.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		583E30D2207E914600570E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 637EEC481A1A6D250091C60B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 637EEC4F1A1A6D250091C60B;
+			remoteInfo = AuctionApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		0F6F3FED1EB32B9A00856EE0 /* Embed App Extensions */ = {
@@ -63,7 +76,13 @@
 		0F6F3FDC1EB2DCAA00856EE0 /* Auction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Auction.entitlements; sourceTree = "<group>"; };
 		0FBD57341CFBFF530020DABB /* NSDate+RelativeTime.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "NSDate+RelativeTime.bundle"; sourceTree = "<group>"; };
 		21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuctionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		264221097794454D1982124B /* Pods-UCRPCAuction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCRPCAuction.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCRPCAuction/Pods-UCRPCAuction.release.xcconfig"; sourceTree = "<group>"; };
 		4B64373DE521A638A0B7C9C7 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		583E30CD207E914600570E88 /* AuctionSnaps.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuctionSnaps.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		583E30CF207E914600570E88 /* AuctionSnaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionSnaps.swift; sourceTree = "<group>"; };
+		583E30D1207E914600570E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		583E30D7207E91B700570E88 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		6293B9CD8E8FD903FE11A119 /* Pods_UCRPCAuction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCRPCAuction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634C33441A1A7C6C0002E9AD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		634C33451A1A7C6C0002E9AD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		634C33481A1A7C8A0002E9AD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -96,11 +115,19 @@
 		B13C1AB3207984AC002B7A22 /* Bid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bid.swift; sourceTree = "<group>"; };
 		B13C1AB4207984AC002B7A22 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B13C1AB8207984D4002B7A22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E5E59D1276F02ADA9A7030DF /* Pods-UCRPCAuction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCRPCAuction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCRPCAuction/Pods-UCRPCAuction.debug.xcconfig"; sourceTree = "<group>"; };
 		F99796D8904C7364A996D11D /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		FAB1C957182FA12586DC31F1 /* Pods-AuctionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AuctionApp/Pods-AuctionApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		583E30CA207E914600570E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		637EEC4D1A1A6D250091C60B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,6 +145,7 @@
 				634C33471A1A7C6C0002E9AD /* Parse.framework in Frameworks */,
 				634C33461A1A7C6C0002E9AD /* Bolts.framework in Frameworks */,
 				5A5B2462AB5000211FF7CD13 /* Pods_AuctionApp.framework in Frameworks */,
+				E0C72A08AF648F209B94888E /* Pods_UCRPCAuction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,8 +157,19 @@
 			children = (
 				21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */,
 				4B64373DE521A638A0B7C9C7 /* Pods_OneSignalNotificationServiceExtension.framework */,
+				6293B9CD8E8FD903FE11A119 /* Pods_UCRPCAuction.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		583E30CE207E914600570E88 /* AuctionSnaps */ = {
+			isa = PBXGroup;
+			children = (
+				583E30D7207E91B700570E88 /* SnapshotHelper.swift */,
+				583E30CF207E914600570E88 /* AuctionSnaps.swift */,
+				583E30D1207E914600570E88 /* Info.plist */,
+			);
+			path = AuctionSnaps;
 			sourceTree = "<group>";
 		};
 		637CD89F1A1C20A9002FF762 /* ThirdParty */ = {
@@ -146,6 +185,7 @@
 			children = (
 				637EEC521A1A6D250091C60B /* AuctionApp */,
 				637EEC681A1A6D250091C60B /* AuctionAppTests */,
+				583E30CE207E914600570E88 /* AuctionSnaps */,
 				637EEC511A1A6D250091C60B /* Products */,
 				D554CCEEA1386A808A25C05F /* Pods */,
 				1A585E4998190DCF18CAA863 /* Frameworks */,
@@ -156,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				637EEC501A1A6D250091C60B /* Auction.app */,
+				583E30CD207E914600570E88 /* AuctionSnaps.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +293,8 @@
 				7F62DD048EF783FF14C98FE7 /* Pods-AuctionApp.release.xcconfig */,
 				69CADD4CA423065FEB76AEC8 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
 				F99796D8904C7364A996D11D /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+				E5E59D1276F02ADA9A7030DF /* Pods-UCRPCAuction.debug.xcconfig */,
+				264221097794454D1982124B /* Pods-UCRPCAuction.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -259,6 +302,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		583E30CC207E914600570E88 /* AuctionSnaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 583E30D4207E914600570E88 /* Build configuration list for PBXNativeTarget "AuctionSnaps" */;
+			buildPhases = (
+				583E30C9207E914600570E88 /* Sources */,
+				583E30CA207E914600570E88 /* Frameworks */,
+				583E30CB207E914600570E88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				583E30D3207E914600570E88 /* PBXTargetDependency */,
+			);
+			name = AuctionSnaps;
+			productName = AuctionSnaps;
+			productReference = 583E30CD207E914600570E88 /* AuctionSnaps.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		637EEC4F1A1A6D250091C60B /* AuctionApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 637EEC6F1A1A6D250091C60B /* Build configuration list for PBXNativeTarget "AuctionApp" */;
@@ -287,10 +348,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0720;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = fitz.guru;
+				ORGANIZATIONNAME = org.ucrpc;
 				TargetAttributes = {
+					583E30CC207E914600570E88 = {
+						CreatedOnToolsVersion = 9.3;
+						DevelopmentTeam = W2CCTJS5J7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 637EEC4F1A1A6D250091C60B;
+					};
 					637EEC4F1A1A6D250091C60B = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = W2CCTJS5J7;
@@ -320,11 +387,19 @@
 			projectRoot = "";
 			targets = (
 				637EEC4F1A1A6D250091C60B /* AuctionApp */,
+				583E30CC207E914600570E88 /* AuctionSnaps */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		583E30CB207E914600570E88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		637EEC4E1A1A6D250091C60B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +477,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		583E30C9207E914600570E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583E30D0207E914600570E88 /* AuctionSnaps.swift in Sources */,
+				583E30D8207E91B700570E88 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		637EEC4C1A1A6D250091C60B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -420,6 +504,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		583E30D3207E914600570E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 637EEC4F1A1A6D250091C60B /* AuctionApp */;
+			targetProxy = 583E30D2207E914600570E88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		637EEC591A1A6D250091C60B /* Main.storyboard */ = {
@@ -441,6 +533,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		583E30D5207E914600570E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = W2CCTJS5J7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AuctionSnaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.ucrpc.AuctionSnaps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AuctionApp;
+			};
+			name = Debug;
+		};
+		583E30D6207E914600570E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = W2CCTJS5J7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AuctionSnaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.ucrpc.AuctionSnaps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AuctionApp;
+			};
+			name = Release;
+		};
 		637EEC6D1A1A6D250091C60B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -563,6 +705,7 @@
 				CODE_SIGN_ENTITLEMENTS = AuctionApp/Auction.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1;
 				DEVELOPMENT_TEAM = W2CCTJS5J7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -579,6 +722,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -593,6 +737,7 @@
 				CODE_SIGN_ENTITLEMENTS = AuctionApp/Auction.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1;
 				DEVELOPMENT_TEAM = W2CCTJS5J7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -608,12 +753,22 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AuctionApp/AuctionApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		583E30D4207E914600570E88 /* Build configuration list for PBXNativeTarget "AuctionSnaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				583E30D5207E914600570E88 /* Debug */,
+				583E30D6207E914600570E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		637EEC4B1A1A6D250091C60B /* Build configuration list for PBXProject "AuctionApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

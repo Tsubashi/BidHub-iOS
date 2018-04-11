@@ -539,7 +539,7 @@
                             </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xS6-9N-35y">
-                            <rect key="frame" x="57" y="7" width="191" height="30"/>
+                            <rect key="frame" x="64.5" y="7" width="191" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="All"/>
@@ -551,13 +551,6 @@
                                 <action selector="segmentBarValueChanged:" destination="DqX-rp-Oxg" eventType="valueChanged" id="Po9-Rp-5IY"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="Checkout" image="checkout" id="wMe-tB-4ut">
-                            <inset key="imageInsets" minX="-8" minY="1" maxX="0.0" maxY="-7"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="checkoutPressed:" destination="DqX-rp-Oxg" id="kjf-Ob-GT9"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Kz2-GN-CoT" id="rOv-dk-oC7"/>
@@ -871,6 +864,5 @@
         <image name="HSLogOutIcon" width="18" height="22"/>
         <image name="UCRPC_Logo_wide" width="1861" height="479"/>
         <image name="bidNowButtonSmall" width="80" height="30"/>
-        <image name="checkout" width="43" height="44"/>
     </resources>
 </document>
