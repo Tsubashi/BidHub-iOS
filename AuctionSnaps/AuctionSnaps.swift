@@ -41,7 +41,8 @@ class AuctionSnaps: XCTestCase {
             }
             return false
         }
-        //snapshot("0Launch")
+        sleep(2)
+        snapshot("0Launch")
 
         let nameTextField = app.textFields["First and Last Name"]
         nameTextField.tap()
@@ -57,7 +58,7 @@ class AuctionSnaps: XCTestCase {
 
         app.buttons["Start"].tap()
         sleep(1)
-        //snapshot("0Launch")
+        snapshot("0Launch")
         app.navigationBars["Auction.ItemListView"].buttons["LogOut"].tap()
         app.alerts["Confirm Logout"].buttons["Logout"].tap()
 
