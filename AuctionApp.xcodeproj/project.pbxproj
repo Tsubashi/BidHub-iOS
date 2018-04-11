@@ -36,7 +36,6 @@
 		B13C1AB5207984AC002B7A22 /* Bid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB3207984AC002B7A22 /* Bid.swift */; };
 		B13C1AB6207984AD002B7A22 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB4207984AC002B7A22 /* Item.swift */; };
 		B13C1AB9207984D4002B7A22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AB8207984D4002B7A22 /* DataManager.swift */; };
-		E0C72A08AF648F209B94888E /* Pods_UCRPCAuction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6293B9CD8E8FD903FE11A119 /* Pods_UCRPCAuction.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,12 +76,10 @@
 		0FBD57341CFBFF530020DABB /* NSDate+RelativeTime.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "NSDate+RelativeTime.bundle"; sourceTree = "<group>"; };
 		21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuctionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		264221097794454D1982124B /* Pods-UCRPCAuction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCRPCAuction.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCRPCAuction/Pods-UCRPCAuction.release.xcconfig"; sourceTree = "<group>"; };
-		4B64373DE521A638A0B7C9C7 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		583E30CD207E914600570E88 /* AuctionSnaps.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuctionSnaps.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		583E30CF207E914600570E88 /* AuctionSnaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionSnaps.swift; sourceTree = "<group>"; };
 		583E30D1207E914600570E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		583E30D7207E91B700570E88 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		6293B9CD8E8FD903FE11A119 /* Pods_UCRPCAuction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCRPCAuction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		634C33441A1A7C6C0002E9AD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		634C33451A1A7C6C0002E9AD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		634C33481A1A7C8A0002E9AD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -145,7 +142,6 @@
 				634C33471A1A7C6C0002E9AD /* Parse.framework in Frameworks */,
 				634C33461A1A7C6C0002E9AD /* Bolts.framework in Frameworks */,
 				5A5B2462AB5000211FF7CD13 /* Pods_AuctionApp.framework in Frameworks */,
-				E0C72A08AF648F209B94888E /* Pods_UCRPCAuction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				21F9F3E6FD2D6A6457DE2805 /* Pods_AuctionApp.framework */,
-				4B64373DE521A638A0B7C9C7 /* Pods_OneSignalNotificationServiceExtension.framework */,
-				6293B9CD8E8FD903FE11A119 /* Pods_UCRPCAuction.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
