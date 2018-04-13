@@ -28,7 +28,6 @@
 		637EEC5D1A1A6D250091C60B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637EEC5C1A1A6D250091C60B /* Images.xcassets */; };
 		637EEC601A1A6D250091C60B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637EEC5E1A1A6D250091C60B /* LaunchScreen.xib */; };
 		63FF2BA01A26463000646D6B /* BlurTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF2B9F1A26463000646D6B /* BlurTransitionSegue.swift */; };
-		B13C1AAC20798492002B7A22 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA620798492002B7A22 /* CheckoutViewController.swift */; };
 		B13C1AAD20798492002B7A22 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */; };
 		B13C1AAE20798492002B7A22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA820798492002B7A22 /* LoginViewController.swift */; };
 		B13C1AAF20798492002B7A22 /* BiddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C1AA920798492002B7A22 /* BiddingViewController.swift */; };
@@ -104,7 +103,6 @@
 		63FF2B9F1A26463000646D6B /* BlurTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurTransitionSegue.swift; sourceTree = "<group>"; };
 		69CADD4CA423065FEB76AEC8 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		7F62DD048EF783FF14C98FE7 /* Pods-AuctionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AuctionApp/Pods-AuctionApp.release.xcconfig"; sourceTree = "<group>"; };
-		B13C1AA620798492002B7A22 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		B13C1AA820798492002B7A22 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B13C1AA920798492002B7A22 /* BiddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingViewController.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				B13C1AA920798492002B7A22 /* BiddingViewController.swift */,
-				B13C1AA620798492002B7A22 /* CheckoutViewController.swift */,
 				B13C1AA820798492002B7A22 /* LoginViewController.swift */,
 				B13C1AAB20798492002B7A22 /* ItemListViewController.swift */,
 				B13C1AA720798492002B7A22 /* ItemTableViewCell.swift */,
@@ -436,8 +433,6 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AFViewShaker/AFViewShaker.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Braintree/Braintree.framework",
-				"${BUILT_PRODUCTS_DIR}/BraintreeDropIn/BraintreeDropIn.framework",
 				"${BUILT_PRODUCTS_DIR}/CSNotificationView/CSNotificationView.framework",
 				"${BUILT_PRODUCTS_DIR}/HanekeSwift/Haneke.framework",
 				"${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding/IHKeyboardAvoiding.framework",
@@ -452,8 +447,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFViewShaker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Braintree.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BraintreeDropIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSNotificationView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IHKeyboardAvoiding.framework",
@@ -489,7 +482,6 @@
 				B13C1AB120798492002B7A22 /* ItemListViewController.swift in Sources */,
 				63FF2BA01A26463000646D6B /* BlurTransitionSegue.swift in Sources */,
 				B13C1AAF20798492002B7A22 /* BiddingViewController.swift in Sources */,
-				B13C1AAC20798492002B7A22 /* CheckoutViewController.swift in Sources */,
 				B13C1AAE20798492002B7A22 /* LoginViewController.swift in Sources */,
 				B13C1AB9207984D4002B7A22 /* DataManager.swift in Sources */,
 				B13C1AB5207984AC002B7A22 /* Bid.swift in Sources */,
@@ -699,7 +691,7 @@
 				CODE_SIGN_ENTITLEMENTS = AuctionApp/Auction.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = W2CCTJS5J7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -731,7 +723,7 @@
 				CODE_SIGN_ENTITLEMENTS = AuctionApp/Auction.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = W2CCTJS5J7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
