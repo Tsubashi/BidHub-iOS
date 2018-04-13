@@ -21,6 +21,7 @@ platform :ios do
   lane :beta do
   desc "Create a beta"
     cocoapods
+    ensure_git_status_clean
     increment_build_number(
       build_number: latest_testflight_build_number + 1,
       xcodeproj: "AuctionApp.xcodeproj"
