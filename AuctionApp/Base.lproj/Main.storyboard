@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Yj-hX-FT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-604"/>
+            <point key="canvasLocation" x="604" y="-710"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lfJ-S8-Jzp">
@@ -539,7 +539,7 @@
                             </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xS6-9N-35y">
-                            <rect key="frame" x="64.5" y="7" width="191" height="30"/>
+                            <rect key="frame" x="57" y="7" width="191" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="All"/>
@@ -551,6 +551,13 @@
                                 <action selector="segmentBarValueChanged:" destination="DqX-rp-Oxg" eventType="valueChanged" id="Po9-Rp-5IY"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" image="checkout" id="lMl-kK-9ZZ">
+                            <inset key="imageInsets" minX="-8" minY="2" maxX="0.0" maxY="-7"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="checkoutPressed:" destination="DqX-rp-Oxg" id="AXq-LJ-3Dy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Kz2-GN-CoT" id="rOv-dk-oC7"/>
@@ -558,12 +565,11 @@
                         <outlet property="tableView" destination="Bpr-7P-qwO" id="gMj-36-EiN"/>
                         <segue destination="L1S-fT-33x" kind="presentation" identifier="logoutSegue" id="gOo-he-U5Z"/>
                         <segue destination="d7m-zO-Df7" kind="custom" identifier="toBiddingVC" customClass="InsetBlurModalSeque" id="kOc-6B-j1b"/>
-                        <segue destination="sDK-4c-Ine" kind="presentation" identifier="checkoutSegue" id="xCL-ks-dQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5u-9l-V98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419.375" y="135"/>
+            <point key="canvasLocation" x="1418" y="-709"/>
         </scene>
         <!--Bidding View Controller-->
         <scene sceneID="zz1-wr-W1T">
@@ -752,111 +758,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1419" y="970"/>
-        </scene>
-        <!--Checkout-->
-        <scene sceneID="VNc-Fr-I02">
-            <objects>
-                <viewController title="Checkout" id="sDK-4c-Ine" customClass="CheckoutViewController" customModule="Auction" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pyt-P7-hth"/>
-                        <viewControllerLayoutGuide type="bottom" id="R6o-Tc-ghz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bH1-xm-6lc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhR-kt-0jP">
-                                <rect key="frame" x="43" y="72" width="235" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-Qa-QAN">
-                                <rect key="frame" x="99" y="137" width="123" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirm Purchase"/>
-                                <connections>
-                                    <action selector="checkoutPressed:" destination="sDK-4c-Ine" eventType="touchUpInside" id="1A0-EH-gkK"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sky-Nx-1r9">
-                                <rect key="frame" x="40" y="175" width="240" height="285"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckoutTableViewCell" rowHeight="64" id="VcR-lk-kcc" customClass="CheckoutTableViewCell" customModule="Auction" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="64"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VcR-lk-kcc" id="SWd-a1-OEX">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="63.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2av-fd-qAR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhv-1S-yfy">
-                                                    <rect key="frame" x="73" y="0.0" width="167" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mox-xF-YGl">
-                                                    <rect key="frame" x="183" y="32" width="57" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Purchased" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-qw-roE">
-                                                    <rect key="frame" x="73" y="32" width="102" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="itemImageView" destination="2av-fd-qAR" id="vsa-fL-SI4"/>
-                                            <outlet property="itemName" destination="mhv-1S-yfy" id="2yu-qL-klm"/>
-                                            <outlet property="itemPrice" destination="mox-xF-YGl" id="n2q-wN-aWm"/>
-                                            <outlet property="itemPurchasedStatus" destination="iTD-qw-roE" id="UmT-dc-wSW"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="sDK-4c-Ine" id="94J-a5-7Mf"/>
-                                </connections>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vJx-Ia-vGO">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Total" id="n8z-X1-yif">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Z0H-DK-cLc">
-                                            <connections>
-                                                <action selector="cancelPressed:" destination="sDK-4c-Ine" id="eLu-Ex-MKo"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="2sW-Bu-wzy"/>
-                    <connections>
-                        <outlet property="tableView" destination="sky-Nx-1r9" id="f8e-qE-S4s"/>
-                        <outlet property="totalPriceLabel" destination="WhR-kt-0jP" id="KWE-Yq-UDZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aBg-D3-6p4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2285.625" y="135"/>
+            <point key="canvasLocation" x="1418" y="135"/>
         </scene>
     </scenes>
     <resources>
@@ -864,5 +766,6 @@
         <image name="HSLogOutIcon" width="18" height="22"/>
         <image name="UCRPC_Logo_wide" width="1861" height="479"/>
         <image name="bidNowButtonSmall" width="80" height="30"/>
+        <image name="checkout" width="43" height="44"/>
     </resources>
 </document>

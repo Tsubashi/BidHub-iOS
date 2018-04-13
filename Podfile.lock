@@ -16,24 +16,6 @@ PODS:
     - AFNetworking/NSURLSession
   - AFViewShaker (0.0.4)
   - Bolts/Tasks (1.9.0)
-  - Braintree/Card (4.14.0):
-    - Braintree/Core
-  - Braintree/Core (4.14.0)
-  - Braintree/PaymentFlow (4.14.0):
-    - Braintree/Card
-    - Braintree/Core
-  - Braintree/UnionPay (4.14.0):
-    - Braintree/Card
-    - Braintree/Core
-  - BraintreeDropIn (6.1.0):
-    - BraintreeDropIn/DropIn (= 6.1.0)
-  - BraintreeDropIn/DropIn (6.1.0):
-    - Braintree/Card (~> 4.11)
-    - Braintree/Core (~> 4.11)
-    - Braintree/PaymentFlow (~> 4.11)
-    - Braintree/UnionPay (~> 4.11)
-    - BraintreeDropIn/UIKit
-  - BraintreeDropIn/UIKit (6.1.0)
   - CSNotificationView (0.5.4)
   - HanekeSwift (0.10.1)
   - IHKeyboardAvoiding (3.7)
@@ -54,7 +36,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (from `https://github.com/AFNetworking/AFNetworking.git`)
   - AFViewShaker (>= 0.0.2)
-  - BraintreeDropIn (>= 6.0.0)
   - CSNotificationView (>= 0.5)
   - HanekeSwift (from `https://github.com/Haneke/HanekeSwift.git`)
   - IHKeyboardAvoiding (>= 1.1)
@@ -68,8 +49,6 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFViewShaker
     - Bolts
-    - Braintree
-    - BraintreeDropIn
     - CSNotificationView
     - IHKeyboardAvoiding
     - "NSDate+RelativeTime"
@@ -100,8 +79,6 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AFViewShaker: 4296c638c24a037e02727b40d89d8f178df3b3f4
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  Braintree: a538846b544c5785cb0040f86cc97079af74b950
-  BraintreeDropIn: 2e8bba4facf6cc925176637030454d8308223b95
   CSNotificationView: 0792f5220163c2befaf1a9716aa3d5a7d6bd4fb1
   HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
   IHKeyboardAvoiding: 4c852fae85667469307678c65f14f5cac8a7be92
@@ -111,6 +88,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: d65371a8e4482380deddb9fe60e14e59ddb30eb3
   UIImage-Resize: fa776860f10e6900bbaf53a73e494bdceaaccc77
 
-PODFILE CHECKSUM: def4e81fe7c9e2732a603f336cdaa7f367a05fcd
+PODFILE CHECKSUM: 24b60817923724c7db68fbea03791b0d3ba84ccb
 
 COCOAPODS: 1.5.0

@@ -9,6 +9,7 @@ import CSNotificationView
 import Haneke
 import NSDate_RelativeTime
 import Parse
+import SafariServices
 
 
 extension String {
@@ -238,8 +239,17 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBAction func checkoutPressed(_ sender: Any) {
-        self.view.endEditing(true) // If we try to pop up the payment bar while the keyboard is up, it crashes.
-        self.performSegue(withIdentifier: "checkoutSegue", sender: nil)
+        let checkoutAlert = UIAlertController(title: "Confirm Checkout", message: "Are you ready to Checkout? If so, we will redirect you to our site where we can process your payment.", preferredStyle: UIAlertControllerStyle.alert)
+
+        checkoutAlert.addAction(UIAlertAction(title: "Checkout", style: .default, handler: { (action: UIAlertAction!) in
+            if let url = URL(string: "https://auction.ucrpc.org/checkout?user=\(PFUser.current()!.email ?? "INVALID")") {
+                let vc = SFSafariViewController(url: url)
+                self.present(vc, animated: true)
+            }
+        }))
+
+        checkoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(checkoutAlert, animated: true, completion: nil)
     }
     
     @IBAction func segmentBarValueChanged(_ sender: AnyObject) {

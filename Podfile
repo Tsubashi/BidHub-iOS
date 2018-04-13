@@ -14,5 +14,4 @@ target 'AuctionApp' do
   pod 'CSNotificationView', '>= 0.5'
   pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift.git'
   pod 'PhoneNumberKit', '>= 1.1.1'
-  pod 'BraintreeDropIn', '>= 6.0.0'
 end
