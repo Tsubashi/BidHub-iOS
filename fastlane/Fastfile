@@ -27,11 +27,12 @@ platform :ios do
       xcodeproj: "AuctionApp.xcodeproj"
     )
     build_app(workspace: "AuctionApp.xcworkspace", scheme: "AuctionApp")
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+    clean_build_artifacts
     commit_version_bump(xcodeproj: "AuctionApp.xcodeproj")
     add_git_tag
     push_to_git_remote
     changelog_from_git_commits
-    upload_to_testflight
   end
   lane :release do 
   desc "Release a new version to the app store"
