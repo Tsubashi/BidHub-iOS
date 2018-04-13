@@ -17,5 +17,6 @@ AuctionApp.xcworkspace/xcuserdata
 # Fastlane Files
 fastlane/screenshots
 fastlane/report.xml
+fastlane/README.md
 Auction.app.dSYM.zip
 Auction.ipa
