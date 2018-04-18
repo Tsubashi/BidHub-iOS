@@ -243,8 +243,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
 
         checkoutAlert.addAction(UIAlertAction(title: "Checkout", style: .default, handler: { (action: UIAlertAction!) in
             if let url = URL(string: "https://auction.ucrpc.org/auction/checkout?user=\(PFUser.current()!.email ?? "INVALID")") {
-                let vc = SFSafariViewController(url: url)
-                self.present(vc, animated: true)
+                UIApplication.shared.openURL(url)
             }
         }))
 
