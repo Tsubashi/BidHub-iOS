@@ -242,7 +242,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         let checkoutAlert = UIAlertController(title: "Confirm Checkout", message: "Are you ready to Checkout? If so, we will redirect you to our site where we can process your payment.", preferredStyle: UIAlertControllerStyle.alert)
 
         checkoutAlert.addAction(UIAlertAction(title: "Checkout", style: .default, handler: { (action: UIAlertAction!) in
-            if let url = URL(string: "https://auction.ucrpc.org/auction/checkout?user=\(PFUser.current()!.email ?? "INVALID")") {
+            if let url = URL(string: "https://auction.ucrpc.org/auction/checkout?user=\(PFUser.current()!.email ?? "INVALID")?session=\(PFUser.current()!.sessionToken ?? "INVALID")") {
                 UIApplication.shared.openURL(url)
             }
         }))
